@@ -2,7 +2,7 @@ public class PaymentService {
     //** when user select the user and make payment deduct that amount
     // from tenants overdue amount(update it there)
     // @param  trigger.old 
-    // Author Madina
+    // Author Madina togaeva
     
     @future (callout=true)
     public static void UpdateTenDueAmount(set<id>paymentid){
