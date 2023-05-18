@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="GitHub">
+        <div class="slds-grid slds-gutters slds-var-p-left_medium">
+            <div class="slds-col slds-size_3-of-4">
+                <span>
+                    <lightning-input 
+                    type="Search" 
+                    placeholder="Enter Username e.g.Elon Musk"
+                    onchange={change}>
+                </lightning-input></span>
+               </div>
+            <div class="slds-col slds-size_1-of-4 slds-var-p-top_medium"> 
+              <span> <lightning-button
+                 label="Search"
+                  onclick={click}>
+              </lightning-button></span> 
+              <span>
+                    <lightning-button
+                    label="Creat Lead"
+                    onclick={click2}>
+                </lightning-button>
+              </span>
+              </div>
+        </div>
+        <template if:true={result}>
+            <img src={result.avatar_url} alt="Avatar" class="slds-var-p-top_medium slds-var-p-left_medium"/>
+            <p>{result.login}</p>
+            <p>GitHub profile:<a>{result.html_url}</a></p>
+            <p>Website:<a>{result.url}</a></p>
+            <p>About:{result.bio}</p>
+            <p>Repos:{result.public_repos}</p>
+            <p>Gits:{result.public_gists}</p>
+            <p>Followers:{result.followers}</p>
+            <p>Name:{result.name}</p>
+            <p>Company:{result.company}</p>
+            <p>Email:{result.email}</p>
+        </template>
+        <template if:true={IdLead}>
+            <lightning-button
+            label="Navigate to Lead"
+            onclick={click3}>
+        </lightning-button>
+        </template>
+    </lightning-card>
+
+</template>

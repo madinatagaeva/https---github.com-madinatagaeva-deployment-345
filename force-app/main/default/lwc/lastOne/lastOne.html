@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Opportunities Datatable with LWC" icon-name="standard:groups">
+        <div class="slds-grid slds-gutters slds-var-p-horizontal_large">
+            <div class="slds-col">
+       <lightning-input name="enter-search"  style="color:rgb(105, 237, 10);width:250px;" label="Search Opportunity by Name" type="text" onchange={handleChange} placeholder="e.g Edge SLA"> </lightning-input>
+                </div>
+    <div class="slds-col">
+    <lightning-combobox placeholder="e.g New Customer"  style="color:rgba(105, 237,  10);width:250px;" label="Select the Type" options={options} onchange={Change} required></lightning-combobox>
+                </div>
+     <div class="slds-col slds-var-p-top_large">
+                         <lightning-button-group>
+                        <lightning-button label="Search Opportunity!" variant="info" class="slds-p-left_medium" onclick={click}></lightning-button>
+                        <lightning-button label="Get All Opportunities!" variant="info" onclick={click2}></lightning-button>
+                    </lightning-button-group>
+                </div>
+            </div>
+            <div class="slds-var-p-around_large" style="height: 400px">
+           <lightning-datatable key-field="Id" data={opporti} columns={columns}> </lightning-datatable>
+            </div>
+    </lightning-card>
+</template>

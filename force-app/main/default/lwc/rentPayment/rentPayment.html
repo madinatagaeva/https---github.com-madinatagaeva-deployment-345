@@ -1,0 +1,79 @@
+<template>
+    <template if:true={show}>
+    <lightning-card title="Monthly Rent Payment" icon-name="custom:custom107">
+        <lightning-button label="START PAYMENT" variant="brand" onclick={click1} class="slds-m-around_medium"
+        ></lightning-button>
+        </lightning-card>
+        </template>
+
+       <template if:true={showInfo}>
+        <lightning-card title="BILLING INFO" icon-name="custom:custom107">
+            <div class="slds-m-around_medium">
+        <lightning-input name="name" label="Full Name"  placeholder="John M.Doe" type="text" onchange={changeInfo}>
+        </lightning-input>
+</div>
+<div class="slds-m-around_medium">
+    <lightning-input name="email" label="Email" placeholder="John@example.com" type="text" onchange={changeInfo}>
+</lightning-input>
+</div>
+<div class="slds-m-around_medium">
+<lightning-input name="phone" label="Phone Number" placeholder="34343434" type="text" onchange={changeInfo}>
+</lightning-input>
+</div>
+<div class="slds-m-around_medium">
+<lightning-input name="address" label="Address" placeholder="542 W. 15th Street" type="text" onchange={changeInfo}>
+</lightning-input>
+</div>
+<div class="slds-m-around_medium">
+<lightning-input name="zip" label="Zip Code" placeholder="6000" type="text" onchange={changeInfo}>
+</lightning-input>
+</div>
+<div class="slds-m-around_medium">
+<lightning-input name="city" label="City" placeholder="New York" type="text" onchange={changeInfo}>
+</lightning-input>
+</div>
+<div class="slds-m-around_medium">
+<lightning-input name="state" label="State" placeholder="NY" type="text" onchange={changeInfo}>
+</lightning-input>
+</div>
+<lightning-button label="NEXT" variant="brand" onclick={click2}  class="slds-m-around_medium"
+></lightning-button>
+
+</lightning-card>
+</template>
+
+<template if:true={showPayment}>
+    <lightning-card title="PAYMENT" icon-name="standard:currency">
+        <div class="slds-m-around_medium">
+    <lightning-input label="Card Number"  placeholder="1234 5678 9012 3456"  name="cardNumber" onchange={pymntChange} type="text">
+</lightning-input>
+</div>
+<div class="slds-m-around_medium">
+    <lightning-input  label="Expiry Date" type="date"  name="expiryDate" onchange={pymntChange}>
+</lightning-input>
+</div>
+<div class="slds-m-around_medium">
+    <lightning-input label="CVC"  placeholder="123"  name="cvc"  type="text"  onchange={pymntChange}>
+</lightning-input>
+</div>
+<div class="slds-m-around_medium">
+    <lightning-input label="Amount" type="text" name="amount" value={fixAmount} onchange={pymntChange}  readonly>
+</lightning-input>
+</div>
+<lightning-button label="PAY RENT" variant="brand" onclick={click3}  class="slds-m-around_medium"
+></lightning-button>
+    </lightning-card>
+    </template>
+
+        <template if:true={showEnd}>
+            <lightning-card title="TRANSACTION COMPLETED" icon-name="action:approval">
+                    
+        <p >{transactionNumber}</p>
+        <a href={recepLink}  class="style"> CLICK TO CHECK RECEIPT</a>
+        <lightning-button label="Send Receipt" variant="brand" onclick={click4} class="slds-m-around_medium">
+    </lightning-button>
+    </lightning-card>
+        </template>
+    
+   
+        </template>

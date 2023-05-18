@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Datatable" icon-name="custom:custom63">
+        <div class="slds-grid slds-gutters slds-var-p-horizontal_large">
+            <div class="slds-col">
+            <lightning-input name="enter-search"   style="color:rgb(105, 237, 10);width:250px;" label="Search Opportunity by Name" type="text" onchange={handleChange} placeholder="e.g Edge SLA"> </lightning-input>
+                </div>
+         <div class="slds-m-around_medium">
+       
+            <div class="slds-col slds-var-p-top_large">
+                <lightning-button label="Get All Opportunities!" variant="brand" onclick={click}></lightning-button>
+            </div>
+        </div>
+        </div>
+        <div class="slds-var-p-around_large" style="height: 400px">   
+        <lightning-datatable
+            key-field="Id"
+            data={opps}
+            columns={columns}
+            onsave={handleSave}
+            draft-values={draftValues}>
+        </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

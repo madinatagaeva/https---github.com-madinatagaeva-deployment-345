@@ -1,0 +1,20 @@
+<template>
+	<lightning-card title="async/await" icon-name="custom:custom4">
+		<lightning-layout class="slds-p-around_small">
+			<lightning-layout-item size="12">
+				<lightning-button label="Get Accounts" onclick={handleClick}></lightning-button>
+			</lightning-layout-item>
+		</lightning-layout>
+		<!-- Accounts table-->
+		<div class="slds-p-around_small">
+			<lightning-datatable
+				data={data}
+				columns={columns}
+				key-field="Id"
+				hide-checkbox-column="true"
+				show-row-number-column="true"
+			>
+			</lightning-datatable>
+		</div>
+	</lightning-card>
+</template>

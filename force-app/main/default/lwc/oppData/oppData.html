@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Opportunity Data">
+        <lightning-datatable key-field="Id"
+         data={data} 
+         columns={columns} 
+        
+         show-row-number-column
+         row-number-offset={rowOffset}
+         suppress-bottom-bar
+         sorted-by={sortBy}
+         sorted-direction={sortDirection}
+         onsort={doSorting}
+         hide-checkbox-column ="true">
+        </lightning-datatable>
+        </lightning-card>
+</template>
